@@ -11,6 +11,7 @@ import CategoryInput from "@/components/form/CategoryInput";
 import TextAreaInput from "@/components/form/TextAreaInput";
 import ProvinceInput from "@/components/form/ProvinceInput";
 import MapLandmark from "@/components/map/MapLandmark";
+import ImageInput from "@/components/form/ImageInput";
 
 const CreateLandmark = async () => {
   return (
@@ -42,6 +43,9 @@ const CreateLandmark = async () => {
             />
             <ProvinceInput />
           </div>
+          
+          <ImageInput />
+
           <MapLandmark />
           <SubmitButton text="create Landmark" size="lg" />
         </FormContainer>
