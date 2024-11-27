@@ -23,6 +23,25 @@ export const imageSchema = z.object({
   image: validateImage(),
 });
 
+export const landmarkSchema = z.object({
+  name: z
+    .string()
+    .min(2, { message: "Name : String must at least 2 characters" })
+    .max(30, { message: "Name : String must be no more than 30 characters" }),
+  category: z.string(),
+  description: z
+    .string()
+    .min(2, { message: "Description must at least 2 characters" })
+    .max(200, { message: "Description must be no more than 200 characters" }),
+  price: z.coerce
+    .number()
+    .int()
+    .min(0, { message: "Price must be greater than 0" }),
+  province: z.string(),
+  lat: z.coerce.number(),
+  lng: z.coerce.number(),
+});
+
 export const validateWithZod = <T>(schema: ZodSchema<T>, data: unknown): T => {
   const result = schema.safeParse(data);
   if (!result.success) {
