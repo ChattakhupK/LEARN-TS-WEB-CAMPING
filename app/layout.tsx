@@ -5,6 +5,12 @@ import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./Providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Mitr } from "next/font/google";
+
+const mitr = Mitr({
+  weight: "400",
+  subsets: ["latin", "thai"],
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +37,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${mitr.className} antialiased`}
         >
           <ThemeProvider
             attribute="class"
