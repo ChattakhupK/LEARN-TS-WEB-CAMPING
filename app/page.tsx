@@ -5,14 +5,14 @@ import { Suspense } from "react";
 const page = async ({
   searchParams,
 }: {
-  searchParams: { search?: string };
+  searchParams: { search?: string; category?: string };
 }) => {
-  const { search } = await searchParams;
+  const { search, category } = await searchParams;
   // console.log(search);
   return (
     <section>
       <Suspense fallback={<LoadingCard />}>
-        <LandmarkContainer search={search} />
+        <LandmarkContainer category={category} search={search} />
       </Suspense>
     </section>
   );
