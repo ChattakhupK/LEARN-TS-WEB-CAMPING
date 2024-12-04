@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 const EmptyList = ({
-  heading = "No item",
+  heading = "No items",
   message = "Please try again",
   btnText = "back home",
 }: {
@@ -9,10 +10,12 @@ const EmptyList = ({
   btnText?: string;
 }) => {
   return (
-    <div>
-      <h2>{heading}</h2>
-      <p>{message}</p>
-      <Button>{btnText}</Button>
+    <div className="text-center mb-6">
+      <h2 className="text-xl font-bold uppercase">{heading}</h2>
+      <p className="text-lg mb-4">{message}</p>
+      <Button className="capitalize" asChild>
+        <Link href={"/"}>{btnText}</Link>
+      </Button>
     </div>
   );
 };

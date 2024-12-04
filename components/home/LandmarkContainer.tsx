@@ -30,7 +30,7 @@ const LandmarkContainer = async ({
       <Hero Landmarks={landmarksHero} />
       <CategoriesList search={search} category={category} />
       {landmarks.length === 0 ? (
-        <EmptyList />
+        <EmptyList heading="No results" btnText="Clear Filters" />
       ) : (
         <LandmarkList landmarks={landmarks} />
       )}
