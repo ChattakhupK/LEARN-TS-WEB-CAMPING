@@ -52,14 +52,14 @@ const MapLandmark = ({
 
   return (
     <>
-      <h1 className="mt-4 font-semibold">Where are you?</h1>
+      <h1 className="mt-4 font-semibold"></h1>
       <input type="hidden" name="lat" value={position ? position[0] : ""} />
       <input type="hidden" name="lng" value={position ? position[1] : ""} />
       <MapContainer
         className="h-[50vh] z-0 relative mb-2"
         center={Location || defaultLocation}
         zoom={9}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
       >
         {!position ? (
           <Marker position={Location || defaultLocation} icon={markerIcon}>
